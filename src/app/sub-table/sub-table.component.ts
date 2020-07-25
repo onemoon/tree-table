@@ -21,7 +21,7 @@ export class SubTableComponent implements AfterViewInit {
   ];
   dataSource: MatTableDataSource<UserInfo>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('paginator') paginator: MatPaginator;
 
   ngAfterViewInit() {
     console.log('this.dataList', this.dataList);
