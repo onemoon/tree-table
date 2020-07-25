@@ -1,0 +1,35 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="first_name">
+    <mat-header-cell *matHeaderCellDef> FirstName </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.first_name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="last_name">
+    <mat-header-cell *matHeaderCellDef> LastName </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.last_name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="gender">
+    <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.gender }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ip_address">
+    <mat-header-cell *matHeaderCellDef> IpAddress </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.ip_address }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
