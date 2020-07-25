@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { UserInfo } from '../interface/interface.model';
 
@@ -7,7 +7,7 @@ import { UserInfo } from '../interface/interface.model';
   templateUrl: './sub-table.component.html',
   styleUrls: ['./sub-table.component.scss'],
 })
-export class SubTableComponent implements OnInit {
+export class SubTableComponent implements AfterViewInit {
   @Input()
   dataList: Array<UserInfo>;
 
@@ -23,7 +23,7 @@ export class SubTableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngOnInit() {
+  ngAfterViewInit() {
     console.log('this.dataList', this.dataList);
     this.dataSource = new MatTableDataSource<UserInfo>(this.dataList);
     this.dataSource.paginator = this.paginator;
